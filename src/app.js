@@ -4,10 +4,6 @@ import SearchBox from './searchbox';
 import {robots} from './robots';
 import { render } from '@testing-library/react';
 
-const state = {
-    robots: robots,
-    searchField: ''
-}
 
 class App extends Component {
     constructor()
@@ -34,7 +30,6 @@ class App extends Component {
             </div>
         );
     }
-
 };
 
 export default App;
