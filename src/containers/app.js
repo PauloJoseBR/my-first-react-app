@@ -6,7 +6,7 @@ import Scroll from '../components/scroll';
 import { render } from '@testing-library/react';
 import './app.css';
 import ErrorBoundary from '../components/errorBoundary';
-
+import Header from '../components/header';
 import { setSearchField, requestRobots } from '../actions';
 
 const mapStateToProps = state => {
@@ -35,22 +35,18 @@ class App extends Component {
         const filteredRobots = robots.filter(robot => {
             return robot.name.toLowerCase().includes(searchField.toLowerCase());
         });
-        if (isPending) {
-            return <h1>Loading</h1>
-        }
-        else {
-            return (
-                <div className="tc">
-                    <h1 className="f1">RoboFriends</h1>
-                    <SearchBox searchChange={onSearchChange} />
-                    <Scroll>
-                        <ErrorBoundary>
-                            <CardList robots={filteredRobots} />
-                        </ErrorBoundary>
-                    </Scroll>
-                </div>
-            );
-        }
+        return (
+            <div className="tc">
+                <Header />
+                <SearchBox searchChange={onSearchChange} />
+                <Scroll>
+                    <ErrorBoundary>
+                        <CardList robots={filteredRobots} />
+                    </ErrorBoundary>
+                </Scroll>
+            </div>
+        );
+        
     }
 };
 
