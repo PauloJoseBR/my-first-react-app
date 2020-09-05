@@ -12,7 +12,7 @@ class Header extends Component {
         return(
         <div>
             <CounterButton color={'red'} /> 
-            <h1 className='f1'>RoboFriends Das Galáxiass!!!</h1>
+            <h1 className='f1'>RoboFriends Das Galaxias!!!</h1>
         </div>);
     }
 }
